@@ -23,7 +23,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-neutral-100 dark:bg-neutral-900">
+        <div className="flex justify-center md:justify-start">
       <ChatContainer profile={profile} messages={messages} />
+      </div>    
 
       
 

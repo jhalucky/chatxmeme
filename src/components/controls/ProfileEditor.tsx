@@ -62,7 +62,7 @@ const ProfileEditor = ({ profile, setProfile }: Props) => {
 <input
   type="file"
   accept="image/*"
-  className="text-xs"
+  className="text-xs dark:text-white"
   onChange={async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
