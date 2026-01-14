@@ -19,7 +19,7 @@ const ChatHeader = ({ profile }: Props) => {
         className="w-8 h-8 rounded-full object-cover"
       />
 
-      <div className="flex items-center gap-1 text-sm font-semibold">
+      <div className="flex items-center gap-1 text-sm font-semibold dark:text-white">
         {profile.name}
         {profile.verified && <VerifiedBadge />}
       </div>
