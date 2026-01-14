@@ -40,7 +40,7 @@ const MessageEditor = ({ messages, setMessages }: Props) => {
             onChange={(e) =>
               updateMessage(m.id, "text", e.target.value)
             }
-            className="w-full p-2 text-sm rounded bg-neutral-100 dark:bg-neutral-900 outline-none"
+            className="w-full p-2 text-sm rounded bg-neutral-100 dark:bg-neutral-900 outline-none dark:text-white" 
           />
 
           <div className="flex items-center gap-3 text-xs">
