@@ -19,7 +19,7 @@ export const exportChat = async (
 
     const link = document.createElement("a");
     link.href = dataUrl;
-    link.download = "fake-instagram-chat.png";
+    link.download = "chatmeme.png";
 
     // 👇 THIS is important
     document.body.appendChild(link);

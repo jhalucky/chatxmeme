@@ -1,5 +1,6 @@
 import type { Profile } from "../../types/chat";
-import VerifiedBadge from "./VerifiedBadge";
+import InstagramVerifiedBadge from "./VerifiedBadge";
+import { DEFAULT_AVATAR } from "../../contants/defaultAvatar";
 
 type Props = {
   profile: Profile;
@@ -13,16 +14,24 @@ const ChatHeader = ({ profile }: Props) => {
       
       <span className="text-xl leading-none cursor-default">‹</span>
 
-      <img
-        src={profile.avatar}
+        <img
+        src={profile.avatar || DEFAULT_AVATAR}
         alt={profile.name}
-        className="w-8 h-8 rounded-full object-cover"
+        className="w-10 h-10 rounded-full object-cover"
       />
 
-      <div className="flex items-center gap-1 text-sm font-semibold dark:text-white">
-        {profile.name}
-        {profile.verified && <VerifiedBadge />}
-      </div>
+      <div className="text-sm font-semibold leading-none">
+  <span className="align-middle dark:text-white">
+    {profile.name}
+  </span>
+
+  {profile.verified && (
+    <span className="ml-1 inline-flex align-middle">
+      <InstagramVerifiedBadge />
+    </span>
+  )}
+</div>
+
     </div>
   );
 };

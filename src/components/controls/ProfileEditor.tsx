@@ -1,5 +1,6 @@
 import type { Profile } from "../../types/chat";
 import { memeProfiles } from "../../presets/memeProfile";
+import { fileToBase64 } from "../../utils/filetoBase64";
 import { imageToBase64 } from "../../utils/imagetoBase64";
 
 
@@ -47,10 +48,34 @@ const ProfileEditor = ({ profile, setProfile }: Props) => {
       const base64 = await imageToBase64(e.target.value);
       setProfile({ ...profile, avatar: base64 });
     } catch {
-      alert("Failed to load image. Use a public image URL.");
+      alert("This site blocks image fetching. Please use file upload instead.");
+    }
+  }}
+
+  
+/>
+
+<label className="text-xs font-medium dark:text-white">
+  Upload avatar
+</label>
+
+<input
+  type="file"
+  accept="image/*"
+  className="text-xs"
+  onChange={async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    try {
+      const base64 = await fileToBase64(file);
+      setProfile({ ...profile, avatar: base64 });
+    } catch {
+      alert("Failed to upload image");
     }
   }}
 />
+
 
 
       {/* Verified */}
