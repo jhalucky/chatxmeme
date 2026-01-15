@@ -33,3 +33,5 @@ export type ChatState = {
   theme: ThemeMode;
 };
 
+
+export type ChatPlatform = "instagram" | "x";

@@ -26,7 +26,7 @@ const ChatHeader = ({ profile }: Props) => {
   </span>
 
   {profile.verified && (
-    <span className="ml-1 inline-flex align-middle">
+    <span className="mt-1.5 inline-flex align-middle">
       <InstagramVerifiedBadge />
     </span>
   )}

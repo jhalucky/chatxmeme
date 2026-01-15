@@ -41,3 +41,11 @@ export type Message = {
   seen?: boolean;
   isTyping?: boolean;
 };
+
+
+
+export type Profile = {
+  name: string;
+  avatar: string;
+  verified?: boolean;
+};
